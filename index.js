@@ -1,11 +1,12 @@
 const express = require('express');
+const escape = require('escape-html');
 const app = express();
 const port = 3000;
 
 // Vulnerable to reflected XSS
 app.get('/', function (req, res) {
   const name = req.query.name;
-  res.send(`Hello ${name}`); // unsanitized user input
+  res.send(`Hello ${escape(name)}`); // sanitized user input
 });
 
 app.listen(port, () => {

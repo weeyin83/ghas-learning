@@ -4,7 +4,8 @@
   "description": "Test app for CodeQL and Dependabot",
   "main": "index.js",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "escape-html": "^1.0.3"
   },
   "scripts": {
     "start": "node index.js"
